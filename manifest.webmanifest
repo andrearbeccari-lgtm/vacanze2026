@@ -1,0 +1,16 @@
+{
+  "name": "Vacanze 2026 — Belgio · Olanda",
+  "short_name": "Vacanze 2026",
+  "description": "Itinerario e mappa del viaggio 28 luglio – 7 agosto 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f1115",
+  "theme_color": "#14202f",
+  "lang": "it",
+  "icons": [
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
