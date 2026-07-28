@@ -1174,7 +1174,7 @@ const stops = [
    category: 'sight' | 'food' | 'park' | 'shopping'
    {
      id: 'chiave-univoca',
-     city: 'bruges' | 'rotterdam' | 'amsterdam',
+     city: 'brussels' | 'bruges' | 'ghent' | 'antwerp' | 'rotterdam' | 'amsterdam',
      category: 'sight' | 'food' | 'park' | 'shopping',
      name: 'Nome del luogo',
      address: 'Indirizzo (per il link Google Maps)',
@@ -1184,6 +1184,16 @@ const stops = [
    }
 ------------------------------------------------------------------- */
 const pois = [
+  // --- Bruxelles (giornata di arrivo, 28 luglio) ---
+  { id: 'brussels-grand-place', city: 'brussels', category: 'sight', name: 'Grand-Place', address: 'Grand-Place, 1000 Bruxelles, Belgio', lat: 50.8467, lng: 4.3525, detail: 'La piazza centrale, patrimonio UNESCO: municipio gotico e case delle corporazioni dorate. Il salotto della città.', wikipedia: 'https://en.wikipedia.org/wiki/Grand-Place' },
+  { id: 'brussels-manneken-pis', city: 'brussels', category: 'sight', name: 'Manneken Pis', address: 'Rue de l\'Étuve 31, 1000 Bruxelles, Belgio', lat: 50.8455, lng: 4.3504, detail: 'La celebre statuina-fontana, spesso vestita con costumi a tema. A 5 minuti a piedi dalla Grand-Place.', wikipedia: 'https://en.wikipedia.org/wiki/Manneken_Pis' },
+  { id: 'brussels-galeries', city: 'brussels', category: 'shopping', name: 'Galeries Royales Saint-Hubert', address: 'Galerie du Roi 5, 1000 Bruxelles, Belgio', lat: 50.8480, lng: 4.3552, detail: 'La più antica galleria commerciale coperta d\'Europa (1847): cioccolatieri storici sotto la volta di vetro.', wikipedia: 'https://en.wikipedia.org/wiki/Royal_Saint-Hubert_Galleries' },
+  { id: 'brussels-comic-center', city: 'brussels', category: 'sight', name: 'Centre Belge de la Bande Dessinée', address: 'Rue des Sables 20, 1000 Bruxelles, Belgio', lat: 50.8510, lng: 4.3600, detail: 'Il museo del fumetto belga (Tintin, Puffi) in un palazzo liberty di Victor Horta. Nel centro anche i murales del percorso del fumetto.', wikipedia: 'https://en.wikipedia.org/wiki/Belgian_Comic_Strip_Center' },
+  { id: 'brussels-cathedral', city: 'brussels', category: 'sight', name: 'Cattedrale dei Santi Michele e Gudula', address: 'Place Sainte-Gudule, 1000 Bruxelles, Belgio', lat: 50.8475, lng: 4.3604, detail: 'La cattedrale gotica di Bruxelles, sede dei matrimoni reali. Ingresso libero.', wikipedia: 'https://en.wikipedia.org/wiki/Cathedral_of_St._Michael_and_St._Gudula' },
+  { id: 'brussels-mont-des-arts', city: 'brussels', category: 'sight', name: 'Mont des Arts', address: 'Mont des Arts, 1000 Bruxelles, Belgio', lat: 50.8439, lng: 4.3568, detail: 'Il giardino-terrazza tra città bassa e città alta: la vista più fotografata su Bruxelles.', wikipedia: 'https://en.wikipedia.org/wiki/Mont_des_Arts' },
+  { id: 'brussels-parc', city: 'brussels', category: 'park', name: 'Parc de Bruxelles', address: 'Parc de Bruxelles, 1000 Bruxelles, Belgio', lat: 50.8466, lng: 4.3627, detail: 'Il parco reale davanti al Palazzo: viali alberati e fontane, perfetto per una pausa.', wikipedia: 'https://en.wikipedia.org/wiki/Brussels_Park' },
+  { id: 'brussels-bouchers', city: 'brussels', category: 'food', name: 'Rue des Bouchers', address: 'Rue des Bouchers, 1000 Bruxelles, Belgio', lat: 50.8475, lng: 4.3555, detail: 'La viuzza storica dei ristoranti: scenografica ma molto turistica — da vedere per l\'atmosfera; per mangiare meglio le vie intorno.', wikipedia: 'https://nl.wikipedia.org/wiki/Beenhouwersstraat_(Brussel)' },
+
   // --- Bruges ---
   { id: 'brugge-markt', city: 'bruges', category: 'sight', name: 'Grote Markt & Belfort', address: 'Markt, 8000 Brugge, Belgio', lat: 51.2085, lng: 3.2247, detail: 'Piazza principale con il campanile medievale (Belfort), il cuore della città.', wikipedia: 'https://en.wikipedia.org/wiki/Belfry_of_Bruges' },
   { id: 'brugge-heilig-bloed', city: 'bruges', category: 'sight', name: 'Basiliek van het Heilig Bloed', address: 'Burg 13, 8000 Brugge, Belgio', lat: 51.2075, lng: 3.2262, detail: 'Basilica del Sacro Sangue, patrimonio UNESCO.', wikipedia: 'https://en.wikipedia.org/wiki/Basilica_of_the_Holy_Blood' },
@@ -1228,6 +1238,17 @@ const pois = [
    "ℹ️ Come arrivare" nella barra in basso quando una città è selezionata.
 ------------------------------------------------------------------- */
 const CITY_INFO = {
+  brussels: `
+    <p><b>Giornata di arrivo, martedì 28 luglio.</b> Lasciati i bagagli al Park Inn,
+    il centro si raggiunge in treno dalla stazione sotto l'aeroporto: fino a
+    <b>Bruxelles-Central</b> sono circa 17 minuti, con treni ogni pochi minuti.
+    Dalla Central la Grand-Place è a 5 minuti a piedi.</p>
+    <p>Tutto il centro si gira <b>a piedi</b>: dalla Grand-Place, Manneken Pis è a 5 minuti,
+    le Galeries Royales e la Rue des Bouchers a 2–3, il Mont des Arts a 7,
+    la cattedrale e il museo del fumetto a 10–12.</p>
+    <p class="tip">💡 Waffle e cioccolato ovunque intorno alla Grand-Place. Per il rientro,
+    i treni verso l'aeroporto partono dalla stessa Bruxelles-Central fino a tarda sera.</p>
+  `,
   bruges: `
     <p><b>Tutto a piedi.</b> L'<b>NH Brugge</b> è sulla piazza 't Zand, a 500 m dalla stazione
     (circa 7 minuti) e a 10 minuti a piedi dal Markt.</p>
@@ -1293,6 +1314,7 @@ const CITY_INFO = {
 };
 
 const CITY_META = {
+  brussels:  { label: 'Bruxelles', center: [50.8467, 4.3525], zoom: 14 },
   bruges:    { label: 'Bruges',    center: [51.2085, 3.2247], zoom: 14 },
   ghent:     { label: 'Gand',      center: [51.0550, 3.7235], zoom: 15 },
   antwerp:   { label: 'Anversa',   center: [51.2215, 4.4045], zoom: 14 },
