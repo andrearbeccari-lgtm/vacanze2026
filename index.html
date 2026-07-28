@@ -1110,23 +1110,26 @@ const stops = [
     name: 'Stazione di Rotterdam Centraal — partenza',
     address: 'Stationsplein 1, 3013 AJ Rotterdam, Paesi Bassi',
     lat: 51.9249, lng: 4.4693,
-    sortKey: '2026-08-03T12:37',
-    dates: '3 ago · partenza 12:37',
+    sortKey: '2026-08-03T11:11',
+    dates: '3 ago · partenza 11:11',
     detail: `
-      <b>Treno selezionato: Intercity Direct (ICD)</b><br>
-      Partenza 12:37 → Arrivo Amsterdam Zuid 13:17 (via Schiphol Airport)<br>
-      Durata ~40 min, alta velocità (linea HSL-Zuid)<br>
+      <b>Treno selezionato: Intercity Direct 1841 (ICD)</b><br>
+      Partenza 11:11 → Arrivo Amsterdam Zuid 11:44 (via Schiphol Airport)<br>
+      Durata 33 min, alta velocità (linea HSL-Zuid), diretto<br>
       <br>
       <i>Attenzione: dal dicembre 2024, a causa dei lavori pluriennali alla stazione di Amsterdam Centraal (fino al 2030), l'Intercity Direct non arriva più a Centraal ma termina ad Amsterdam Zuid — comodo per voi: dall'hotel nhow Amsterdam RAI dista una sola fermata di metro (52 fino a Europaplein) o 20 minuti a piedi.</i>
       <br><br>
-      <i>Nota: l'ICD viaggia 2 volte l'ora, circa ai minuti :07 e :37 — alternative entro 30 minuti da quella selezionata:</i>
+      <i>Nota: tra ICD (minuti :11 e :41) ed EuroCity Direct (minuto :21) c'è un diretto ogni ~20 minuti — nessuna ansia da orario (verificato su dati NS del 3/8):</i>
       <table style="width:100%; font-size:11px; margin-top:4px; border-collapse:collapse;">
         <tr style="color:#9aa4b8;"><td>Partenza</td><td>Arrivo Amsterdam Zuid</td><td>Treno</td><td>Durata</td></tr>
-        <tr><td>12:07</td><td>12:47</td><td>ICD</td><td>~40 min</td></tr>
-        <tr style="color:#7dd3fc; font-weight:700;"><td>12:37</td><td>13:17</td><td>ICD ✓</td><td>~40 min</td></tr>
-        <tr><td>13:07</td><td>13:47</td><td>ICD</td><td>~40 min</td></tr>
+        <tr><td>10:41</td><td>11:14</td><td>ICD 1839</td><td>33 min</td></tr>
+        <tr style="color:#7dd3fc; font-weight:700;"><td>11:11</td><td>11:44</td><td>ICD 1841 ✓</td><td>33 min</td></tr>
+        <tr><td>11:21</td><td>11:54</td><td>ECD 9535 (internazionale)</td><td>33 min</td></tr>
+        <tr><td>11:41</td><td>12:14</td><td>ICD 1843</td><td>33 min</td></tr>
       </table>
-      <br><i>Per i treni NS non serve prenotare in anticipo: si viaggia con biglietto/carta contactless valido per la giornata su qualsiasi convoglio.</i>
+      <br><i>Per i treni NS non serve prenotare: si viaggia con carta contactless (OVpay). Per l'ICD serve
+      il piccolo <b>supplemento Intercity Direct</b> (~€3 a persona): con la contactless si tocca la
+      colonnina gialla "Toeslag" in banchina prima di salire.</i>
       <br><a href="https://www.ns.nl/en/tickets" target="_blank" rel="noopener">🎫 Biglietti e orari su ns.nl</a>
     `
   },
@@ -1137,9 +1140,9 @@ const stops = [
     name: 'Stazione di Amsterdam Zuid',
     address: 'Amsterdam Zuid, 1077 XX Amsterdam, Paesi Bassi',
     lat: 52.3389, lng: 4.8728,
-    sortKey: '2026-08-03T13:17',
-    dates: '3 ago · arrivo 13:17',
-    detail: 'Arrivo con Intercity Direct da Rotterdam Centraal (partito alle 12:37). Da qui una fermata di metro 52 fino a Europaplein, oppure circa 20 minuti a piedi, per arrivare al nhow Amsterdam RAI.'
+    sortKey: '2026-08-03T11:44',
+    dates: '3 ago · arrivo 11:44',
+    detail: 'Arrivo con Intercity Direct 1841 da Rotterdam Centraal (partito alle 11:11). Da qui una fermata di metro 52 fino a Europaplein (2 minuti, contactless OVpay) + 3 minuti a piedi, oppure circa 20 minuti a piedi, per arrivare al nhow Amsterdam RAI — in hotel prima di mezzogiorno per lasciare le valigie.'
   },
 ];
 
