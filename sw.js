@@ -1,9 +1,14 @@
 /* Service worker — Vacanze 2026
-   - I file del sito vengono pre-cachati all'installazione: l'itinerario
-     resta consultabile anche completamente offline.
+   - I file del sito usano network-first: quando c'è connessione arriva
+     sempre l'ultima versione pubblicata; solo se la rete non risponde
+     (offline vero) si serve la copia in cache, così l'itinerario resta
+     consultabile anche senza segnale.
    - Le tile delle mappe (cartocdn) usano cache-first con aggiornamento in
-     background: le zone già viste restano visibili senza rete. */
-const CORE = 'vacanze-core-v1';
+     background: le zone già viste restano visibili senza rete.
+   - Bump del nome cache (v1 -> v2): elimina la cache precedente, che con
+     la vecchia strategia cache-first restava bloccata sulla prima versione
+     visitata e non si aggiornava mai da sola. */
+const CORE = 'vacanze-core-v2';
 const TILES = 'vacanze-tiles-v1';
 const MAX_TILES = 800;
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-512.png'];
@@ -51,18 +56,18 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // File del sito: cache-first con fallback in rete
+  // File del sito: network-first, con la cache solo come rete di sicurezza offline
   if (url.origin === location.origin) {
     e.respondWith(
-      caches.match(e.request).then(
-        (hit) => hit || fetch(e.request).then((res) => {
+      fetch(e.request)
+        .then((res) => {
           if (res.ok) {
             const clone = res.clone();
             caches.open(CORE).then((c) => c.put(e.request, clone));
           }
           return res;
         })
-      )
+        .catch(() => caches.match(e.request))
     );
   }
 });

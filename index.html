@@ -2077,7 +2077,10 @@ updateNetStatus();
    Pages). Aperta come semplice file, la registrazione viene saltata. */
 if ('serviceWorker' in navigator &&
     (location.protocol === 'https:' || location.hostname === 'localhost')) {
-  navigator.serviceWorker.register('./sw.js').catch(() => { /* non bloccante */ });
+  // updateViaCache: 'none' — controlla sempre sw.js in rete, senza la cache
+  // HTTP del browser: così le modifiche al service worker (come questa)
+  // vengono rilevate al volo, invece di restare invisibili fino a 24 ore.
+  navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).catch(() => { /* non bloccante */ });
 }
 
 /* ---------- Avvio ---------- */
