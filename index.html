@@ -831,7 +831,7 @@ const stops = [
     name: 'NH Atlanta Rotterdam',
     address: 'Aert van Nesstraat 4, 3012 CA Rotterdam, Paesi Bassi',
     lat: 51.9210, lng: 4.4789,
-    sortKey: '2026-08-01T14:15',
+    sortKey: '2026-08-01T13:30',
     dates: '1–3 ago · 2 notti',
     detail: '€494'
   },
@@ -1047,21 +1047,22 @@ const stops = [
     name: 'Stazione di Bruges (Brugge) — partenza',
     address: 'Stationsplein, 8000 Brugge, Belgio',
     lat: 51.1966, lng: 3.2166,
-    sortKey: '2026-08-01T11:34',
-    dates: '1 ago · partenza 11:34',
+    sortKey: '2026-08-01T10:34',
+    dates: '1 ago · partenza 10:34',
     detail: `
-      <b>Treno selezionato: IC 1511</b><br>
-      Partenza 11:34 (binario 7) → Arrivo Bruxelles-Midi/Centrale 12:31 (binario 13)<br>
-      Durata 57 min, diretto<br>
+      <b>Treno selezionato: IC 1510</b><br>
+      Partenza 10:34 (binario 7) → Arrivo Bruxelles-Midi/Centrale 11:31 (binario 11)<br>
+      Durata 57 min, diretto — poi cambio comodo (26 min) per l'EuroCity Direct verso Rotterdam<br>
       <br>
-      <i>Nota: altri treni disponibili nella mezz'ora prima e dopo quello selezionato</i>
+      <i>Nota: la coppia IC + EuroCity Direct si ripete identica ogni ora — se si fa tardi
+      si parte alle 11:34 e si arriva a Rotterdam un'ora dopo (orari verificati su dati SNCB):</i>
       <table style="width:100%; font-size:11px; margin-top:4px; border-collapse:collapse;">
-        <tr style="color:#9aa4b8;"><td>Partenza</td><td>Arrivo Midi</td><td>Treno</td><td>Durata</td></tr>
-        <tr><td>11:08</td><td>12:01</td><td>EXT 18211</td><td>53 min</td></tr>
-        <tr><td>11:11</td><td>12:09</td><td>IC 2810</td><td>58 min</td></tr>
-        <tr style="color:#7dd3fc; font-weight:700;"><td>11:34</td><td>12:31</td><td>IC 1511 ✓</td><td>57 min</td></tr>
-        <tr><td>11:59</td><td>12:53</td><td>IC 511</td><td>54 min (troppo vicino all'Eurostar delle 12:53)</td></tr>
+        <tr style="color:#9aa4b8;"><td>Partenza</td><td>Arrivo Midi</td><td>Treno</td><td>Arrivo Rotterdam</td></tr>
+        <tr style="color:#7dd3fc; font-weight:700;"><td>10:34</td><td>11:31</td><td>IC 1510 ✓</td><td>13:17</td></tr>
+        <tr><td>11:34</td><td>12:31</td><td>IC 1511</td><td>14:17</td></tr>
+        <tr><td>12:34</td><td>13:31</td><td>IC 1512</td><td>15:02 (con Eurostar 13:53)</td></tr>
       </table>
+      <i>Da evitare le opzioni con doppio cambio a Gand + Anversa: solo 6 minuti di margine a Gand.</i>
       <br><a href="https://www.belgiantrain.be/en/ticketing-search" target="_blank" rel="noopener">🎫 Acquista biglietti su belgiantrain.be</a>
     `
   },
@@ -1069,20 +1070,24 @@ const stops = [
     id: 'bru-midi-transfer-aug1',
     type: 'train',
     place: 'Bruxelles',
-    name: 'Stazione Bruxelles-Midi/Centrale — cambio per Eurostar',
+    name: 'Stazione Bruxelles-Midi/Centrale — cambio per Rotterdam',
     address: 'Avenue Fonsny 47b, 1060 Bruxelles, Belgio',
     lat: 50.8357, lng: 4.3355,
-    sortKey: '2026-08-01T12:31',
-    dates: '1 ago · arrivo 12:31, cambio, partenza 12:53',
+    sortKey: '2026-08-01T11:31',
+    dates: '1 ago · arrivo 11:31, cambio, partenza 11:57',
     detail: `
-      Arrivo da Bruges alle 12:31 (binario 13) con IC 1511.<br>
-      <b>Treno selezionato: Eurostar (ex Thalys) per Rotterdam</b><br>
-      Partenza 12:53 → Arrivo Rotterdam Centraal 14:02<br>
-      Durata 1h09, diretto, alta velocità — 22 minuti per il cambio<br>
+      Arrivo da Bruges alle 11:31 (binario 11) con IC 1510.<br>
+      <b>Treno selezionato: EuroCity Direct 9543 per Rotterdam</b><br>
+      Partenza 11:57 (binario 8) → Arrivo Rotterdam Centraal 13:17<br>
+      Durata 1h20, diretto, alta velocità — 26 minuti per il cambio<br>
       <br>
-      <i>Nota: gli Eurostar Bruxelles→Rotterdam viaggiano a cadenza oraria, circa ai minuti :53 di ogni ora — non ci sono quindi alternative entro 30 minuti da quello selezionato: il precedente parte alle 11:53, il successivo alle 13:53.</i>
+      <i><b>Senza prenotazione obbligatoria:</b> sull'EuroCity Direct i posti sono liberi,
+      basta il biglietto internazionale (da ~€25 a tratta). Viaggia ogni ora al minuto :57:
+      se si perde il cambio, il successivo parte alle 12:57 (arrivo 14:17). Alle 13:53 c'è
+      anche l'Eurostar, che però richiede prenotazione del posto.</i>
       <br><br>
-      <a href="https://www.eurostar.com/us-en/train/brussels-to-rotterdam" target="_blank" rel="noopener">🎫 Acquista biglietti su eurostar.com</a>
+      <a href="https://www.b-europe.com/EN" target="_blank" rel="noopener">🎫 Acquista biglietti su b-europe.com</a>
+      <a href="https://www.nsinternational.com/en" target="_blank" rel="noopener">🎫 oppure nsinternational.com</a>
     `
   },
   {
@@ -1092,9 +1097,9 @@ const stops = [
     name: 'Stazione di Rotterdam Centraal',
     address: 'Stationsplein 1, 3013 AJ Rotterdam, Paesi Bassi',
     lat: 51.9249, lng: 4.4693,
-    sortKey: '2026-08-01T14:02',
-    dates: '1 ago · arrivo 14:02',
-    detail: 'Arrivo con Eurostar da Bruxelles-Midi/Centrale (partito alle 12:53). Da qui è un breve tragitto verso NH Atlanta Rotterdam.'
+    sortKey: '2026-08-01T13:17',
+    dates: '1 ago · arrivo 13:17',
+    detail: 'Arrivo con EuroCity Direct da Bruxelles-Midi/Centrale (partito alle 11:57). L\'NH Atlanta è a circa 1 km: 10–12 minuti a piedi lungo il Weena/Coolsingel, oppure metro (1 fermata, Beurs) o tram 3/20.'
   },
 
   // --- 3 agosto: Rotterdam → Amsterdam ---
@@ -1179,6 +1184,8 @@ const pois = [
   { id: 'rotterdam-erasmusbrug', city: 'rotterdam', category: 'sight', name: 'Erasmusbrug', address: 'Erasmusbrug, 3011 Rotterdam, Paesi Bassi', lat: 51.9083, lng: 4.4872, detail: 'Il ponte simbolo della città, splendido al tramonto.', wikipedia: 'https://en.wikipedia.org/wiki/Erasmus_Bridge' },
   { id: 'rotterdam-euromast', city: 'rotterdam', category: 'sight', name: 'Euromast', address: 'Parkhaven 20, 3016 GM Rotterdam, Paesi Bassi', lat: 51.9041, lng: 4.4664, detail: 'Torre panoramica con vista sulla città e il porto.', wikipedia: 'https://en.wikipedia.org/wiki/Euromast' },
   { id: 'rotterdam-witte-de-with', city: 'rotterdam', category: 'food', name: 'Witte de Withstraat', address: 'Witte de Withstraat, 3012 Rotterdam, Paesi Bassi', lat: 51.9138, lng: 4.4784, detail: 'Strada con locali, bar e ristoranti alla moda.', wikipedia: 'https://nl.wikipedia.org/wiki/Witte_de_Withstraat_(Rotterdam)' },
+  { id: 'rotterdam-dudok', city: 'rotterdam', category: 'food', name: 'Dudok — colazione', address: 'Meent 88, 3011 JP Rotterdam, Paesi Bassi', lat: 51.9220, lng: 4.4826, detail: 'Il grand café più iconico di Rotterdam, nell\'edificio dell\'architetto Dudok: colazione servita e la loro appeltaart è leggendaria. A 4 minuti a piedi dall\'NH Atlanta.' },
+  { id: 'rotterdam-picknick', city: 'rotterdam', category: 'food', name: 'Picknick — colazione', address: 'Pannekoekstraat 5, 3011 KG Rotterdam, Paesi Bassi', lat: 51.9233, lng: 4.4880, detail: 'Piccolo e amatissimo spot di colazioni e brunch nella via più foodie del centro. A 8–10 minuti a piedi dall\'hotel.' },
 
   // --- Amsterdam ---
   { id: 'amsterdam-rijksmuseum', city: 'amsterdam', category: 'sight', name: 'Rijksmuseum', address: 'Museumstraat 1, 1071 XX Amsterdam, Paesi Bassi', lat: 52.3600, lng: 4.8852, detail: 'Il grande museo nazionale olandese, opere di Rembrandt e Vermeer.', wikipedia: 'https://en.wikipedia.org/wiki/Rijksmuseum' },
