@@ -855,7 +855,7 @@ const stops = [
     lat: 52.3105, lng: 4.7683,
     sortKey: '2026-08-07T08:00',
     dates: '7 ago',
-    detail: 'Rientro — Volo KLM KL1677 verso Napoli, arrivo 10:35'
+    detail: 'Rientro — Volo KLM KL1677, decollo 08:05, arrivo a Napoli 10:35. Arrivando alle 06:05 con lo Sprinter da Amsterdam RAI avete 2 ore esatte per check-in e sicurezza (ad agosto le code a Schiphol possono essere lunghe: meglio non ridurre il margine).'
   },
 
   // --- STAZIONI TRENO ---
@@ -1143,6 +1143,34 @@ const stops = [
     sortKey: '2026-08-03T11:44',
     dates: '3 ago · arrivo 11:44',
     detail: 'Arrivo con Intercity Direct 1841 da Rotterdam Centraal (partito alle 11:11). Da qui una fermata di metro 52 fino a Europaplein (2 minuti, contactless OVpay) + 3 minuti a piedi, oppure circa 20 minuti a piedi, per arrivare al nhow Amsterdam RAI — in hotel prima di mezzogiorno per lasciare le valigie.'
+  },
+
+  // --- 7 agosto: rientro, nhow RAI → Schiphol ---
+  {
+    id: 'rai-station-departure',
+    type: 'train',
+    place: 'Amsterdam',
+    name: 'Stazione di Amsterdam RAI — partenza per Schiphol',
+    address: 'Europaboulevard, 1078 Amsterdam, Paesi Bassi',
+    lat: 52.3340, lng: 4.8891,
+    sortKey: '2026-08-07T05:54',
+    dates: '7 ago · partenza 05:54',
+    detail: `
+      La stazione RAI è a <b>3 minuti a piedi dal nhow</b>: sveglia ~5:00, si lascia l'hotel alle 5:45.<br>
+      <b>Treno selezionato: Sprinter 5710 — diretto per Schiphol</b><br>
+      Partenza 05:54 → Arrivo Schiphol Airport 06:05<br>
+      Durata 11 min, senza cambi — si paga con carta contactless (OVpay), nessun supplemento<br>
+      <br>
+      <i>Alternative della mattina (orari verificati su dati NS del 7/8):</i>
+      <table style="width:100%; font-size:11px; margin-top:4px; border-collapse:collapse;">
+        <tr style="color:#9aa4b8;"><td>Partenza RAI</td><td>Arrivo Schiphol</td><td>Treno</td><td>Note</td></tr>
+        <tr><td>05:34</td><td>05:43</td><td>Sprinter 4308</td><td>opzione extra-prudente</td></tr>
+        <tr style="color:#7dd3fc; font-weight:700;"><td>05:54</td><td>06:05</td><td>Sprinter 5710 ✓</td><td>2 ore esatte prima del volo</td></tr>
+        <tr><td>06:18</td><td>06:31</td><td>Sprinter 4312</td><td>riserva, margine ridotto</td></tr>
+        <tr><td>06:38</td><td>06:47</td><td>Sprinter 4914</td><td>solo emergenza</td></tr>
+      </table>
+      <br><a href="https://www.ns.nl/en/tickets" target="_blank" rel="noopener">🎫 Biglietti e orari su ns.nl</a>
+    `
   },
 ];
 
